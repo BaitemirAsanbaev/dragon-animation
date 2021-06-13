@@ -1,0 +1,63 @@
+@keyframes bite {
+  from{
+    transform: rotate(-10deg);
+  }
+  to{
+    transform: rotate(10deg);
+  } 
+}
+@keyframes shake {
+  from{
+    transform: translate(-10px, -10px);
+  }
+  to{
+    transform: translate(10px, 10px);
+  } 
+}
+
+body{
+  margin: 0;
+  background-image: url(./jap-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  overflow: hidden;
+  height: 1200px;
+}
+*{
+  box-sizing: border-box;
+}
+
+.dragon{
+  height: 200px;
+  animation: shake 2s infinite alternate;
+
+}
+.head{
+  height: 170px;
+  display: block;
+  position: absolute;
+  top: 100px;
+  z-index: 2;
+}
+.jaw{
+  height: 100px;
+  display: block;
+  margin-left: 70px;
+  position: absolute;
+  top: 200px;
+  z-index: 0;
+  transform-origin: left;
+  animation: bite 1s infinite alternate;
+}
+.flame{
+  width: 100px;
+  height: 100px;
+  background-image: url(./flame.svg);
+  transform: rotate(-45deg);
+  z-index: 4;
+  position: absolute;
+  top: 200px;
+  left: 160px;
+  transition: top 1s, left 1s, transform 1s;
+}
